@@ -57,4 +57,4 @@ Check it out, and make a "shortcut":
 
 ####Usage
 
-	See [http://trac.webkit.org/wiki/JSC](http://trac.webkit.org/wiki/JSC)
+See [http://trac.webkit.org/wiki/JSC](http://trac.webkit.org/wiki/JSC)
