@@ -1,3 +1,5 @@
+#!/bin/bash
+
 src="example/src"
 dist="example/dist/"
 
