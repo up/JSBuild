@@ -1,0 +1,18 @@
+* {
+  font-family: "Open Sans", arial;
+  margin: 3px;
+}
+h3 {
+  border-bottom: 2px solid #ddd;
+}
+.tag-name {
+  font-weight: bold;
+}
+.tag-value {
+  font-style: italic;  
+}
+code {
+  font-family: monospace;
+  display: block;
+  background-color: #F8F8F8;
+}
