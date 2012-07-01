@@ -1,0 +1,20 @@
+{
+  "project": {
+    "meta" : {
+      "name" : "QCHECK",
+      "repo" : "https://github.com/up/otto/qcheck"
+    },
+    "tasks" : [
+      {
+        "name" : "HTML",
+        "description" : "We render the Templates and create an output file in 'dist' folder.",
+        "tool" : "jsc",
+        "builder" : "render.html.js",
+        "arguments" : [
+          "src/head.htm",  "src/body.htm"
+        ],      
+        "data" : "data.json"
+      }
+    ]
+  }
+}
