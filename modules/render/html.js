@@ -5,7 +5,7 @@ if (!arguments[0]) {
 }
 */
 
-load('builder/example/src/data.js');
+load('example/src/data.js');
 
 var head = arguments[0].replace(
   '{{title}}', data.title

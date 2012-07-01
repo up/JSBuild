@@ -1,17 +1,24 @@
 ##Build
 
-run `sh builder/build.sh`
+run `sh build.sh`
 
 ###build.sh
 
-	src="builder/example/src"
-	dist="builder/example/dist/"
+	src="example/src"
+	dist="example/dist/"
 
-	jsc builder/render.html.js -- "`cat $src/head.htm`" "`cat $src/body.htm`" > $dist/index.htm
+	# Render HTML Templates
+	jsc modules/render/html.js -- "`cat $src/head.htm`" "`cat $src/body.htm`" > $dist/index.htm
+
+	# Create Bookmarklet
+	jsc modules/create/bookmarklet.js -- "`cat $src/bookmarklet.source.js`" > $dist/bookmarklet.js
+
+	# Create Documentation
+	jsc modules/create/documentation.js -- "`cat $src/bookmarklet.source.js`" "test doc"> $dist/documentation.htm
 	
 ###render.html.js
 
-	load('builder/example/src/data.js');
+	load('example/src/data.js');
 	
 	var head = arguments[0].replace(
 	  '{{title}}', 'Hello Horld!'
@@ -31,14 +38,14 @@ run `sh builder/build.sh`
 ###data.js
 
 	var data = {
-	  title : "Das ist der Titel",
-	  header : "Das ist der Header",
-	  para : "Das ist der Text"
+	  title : "My Title",
+	  header : "My Header",
+	  para : "My Text"
 	}
-
+	
 ###JSC
 
-you need JSC, which is Webkit's JavaScriptCore, comes with Macs.
+You need JSC, which is Webkit's JavaScriptCore, comes with Macs.
 
 JSC is well hidden in
 
@@ -50,11 +57,4 @@ Check it out, and make a "shortcut":
 
 ####Usage
 
-	$ jsc -h
-	Usage: jsc [options] [files] [-- arguments]
-	  -d         Dumps bytecode (debug builds only)
-	  -e         Evaluate argument as script code
-	  -f         Specifies a source file (deprecated)
-	  -h|--help  Prints this help message
-	  -i         Enables interactive mode (default if no files are specified)
-	  -s         Installs signal handlers that exit on a crash (Unix platforms only)
+	See [http://trac.webkit.org/wiki/JSC](http://trac.webkit.org/wiki/JSC)
