@@ -139,13 +139,13 @@
     // Remove comments
     text = removeComments(text);
 
-  	text = text.replace(
-  	  /\r/g, '\n'          // Standardize newlines
-  	).replace(
-  	  /[\t ]+/g, ' '       // No multiple spaces
-  	).replace(
-  	  /'/g, '"<$<$<$<$<$<' // Hack to avoid replacing inside literal strings
-  	);
+    text = text.replace(
+      /\r/g, '\n'          // Standardize newlines
+    ).replace(
+      /[\t ]+/g, ' '       // No multiple spaces
+    ).replace(
+      /'/g, '"<$<$<$<$<$<' // Hack to avoid replacing inside literal strings
+    );
 
     // Replace line-by-line
     lines = text.split('\n');
@@ -153,12 +153,12 @@
 
     for (i = 0; i < len_lines; i++) {
 
-  		  // Trim each line
-  		  line = lines[i].replace(
-  		    /^[\t ]+/g, '' // Left
-  		  ).replace(
-  		    /[\t ]+$/g, '' // Right
-  		  );
+        // Trim each line
+        line = lines[i].replace(
+          /^[\t ]+/g, '' // Left
+        ).replace(
+          /[\t ]+$/g, '' // Right
+        );
 
         quotes = line.split('"');
         len_quotes = quotes.length;
